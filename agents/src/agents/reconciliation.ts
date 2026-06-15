@@ -108,7 +108,7 @@ export async function reconciliationAgent(state: PaymentState): Promise<Partial<
   try {
     const { error: dbError } = await supabase
       .from("payments")
-      .upsert(paymentRecord, { onConflict: "payment_id" });
+      .upsert(paymentRecord as any, { onConflict: "payment_id" });
 
     if (dbError) errors.push(`supabase.upsert: ${dbError.message}`);
   } catch (err: any) {
