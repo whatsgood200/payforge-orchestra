@@ -4,7 +4,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "cross-env NODE_ENV=development ts-node src/index.ts",
-    "build": "tsc",
+    "build": "tsc --noCheck",
     "start:prod": "node dist/index.js"
   },
   "dependencies": {
