@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   PayForge Orchestra — Design System
+   Inspired by SUI-INDEX: brutalist, monospace, confident
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --pf-black:   #0a0a0a;
+  --pf-yellow:  #ffd600;
+  --pf-green:   #00d26a;
+  --pf-red:     #ff3b3b;
+  --pf-orange:  #ff7c2a;
+  --pf-muted:   #666666;
+  --pf-border:  #222222;
+  --pf-surface: #111111;
+  --pf-surface2:#161616;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  background-color: var(--pf-black);
+  color: #ffffff;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ────────────────────────────────────────────────────────────── */
+
+.pf-hero {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.pf-section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--pf-muted);
+  font-weight: 500;
+}
+
+.pf-metric-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--pf-yellow);
+  line-height: 1;
+}
+
+.pf-mono {
+  font-family: inherit;
+  font-size: 11px;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+
+.pf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────────────── */
+
+.pf-card {
+  background: var(--pf-surface);
+  border: 0.5px solid var(--pf-border);
+  padding: 16px;
+}
+
+.pf-card-yellow {
+  border-left: 2px solid var(--pf-yellow);
+}
+
+.pf-card-green {
+  border-left: 2px solid var(--pf-green);
+}
+
+.pf-card-red {
+  border-left: 2px solid var(--pf-red);
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────────── */
+
+.pf-btn-primary {
+  background: var(--pf-yellow);
+  color: var(--pf-black);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.pf-btn-primary:hover { opacity: 0.88; }
+.pf-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.pf-btn-secondary {
+  background: transparent;
+  color: var(--pf-muted);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 12px 24px;
+  border: 0.5px solid var(--pf-border);
+  cursor: pointer;
+  transition: color 0.1s, border-color 0.1s;
+}
+
+.pf-btn-secondary:hover {
+  color: #ffffff;
+  border-color: #444444;
+}
+
+/* ── Status badges ──────────────────────────────────────────────────────────── */
+
+.pf-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  border: 0.5px solid;
+}
+
+.pf-badge-live   { color: var(--pf-green);  border-color: var(--pf-green); }
+.pf-badge-active { color: var(--pf-yellow); border-color: var(--pf-yellow); }
+.pf-badge-idle   { color: var(--pf-muted);  border-color: var(--pf-border); }
+.pf-badge-error  { color: var(--pf-red);    border-color: var(--pf-red); }
+
+/* ── Terminal trace ─────────────────────────────────────────────────────────── */
+
+.pf-terminal {
+  background: #0d0d0d;
+  border: 0.5px solid var(--pf-border);
+  padding: 14px;
+  font-size: 11px;
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pf-border) transparent;
+}
+
+.pf-trace-ok     { color: var(--pf-green); }
+.pf-trace-active { color: var(--pf-yellow); }
+.pf-trace-muted  { color: var(--pf-muted); }
+.pf-trace-error  { color: var(--pf-red); }
+
+/* ── Table ──────────────────────────────────────────────────────────────────── */
+
+.pf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.pf-table th {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 9px;
+  color: var(--pf-muted);
+  padding: 8px 12px;
+  border-bottom: 0.5px solid var(--pf-border);
+  font-weight: 500;
+}
+
+.pf-table td {
+  padding: 10px 12px;
+  border-bottom: 0.5px solid var(--pf-border);
+  color: #cccccc;
+}
+
+.pf-table tr:last-child td { border-bottom: none; }
+.pf-table tr:hover td { background: var(--pf-surface2); }
+
+/* ── Inputs ─────────────────────────────────────────────────────────────────── */
+
+.pf-input {
+  width: 100%;
+  background: var(--pf-surface);
+  border: 0.5px solid var(--pf-border);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.1s;
+}
+
+.pf-input:focus { border-color: var(--pf-yellow); }
+.pf-input::placeholder { color: var(--pf-muted); }
+
+.pf-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* ── Dividers ───────────────────────────────────────────────────────────────── */
+
+.pf-divider {
+  height: 0.5px;
+  background: var(--pf-border);
+  margin: 24px 0;
+}
+
+/* ── Utils ──────────────────────────────────────────────────────────────────── */
+
+.text-yellow  { color: var(--pf-yellow); }
+.text-green   { color: var(--pf-green); }
+.text-red     { color: var(--pf-red); }
+.text-muted   { color: var(--pf-muted); }
+.text-orange  { color: var(--pf-orange); }
+.text-white   { color: #ffffff; }
+.uppercase    { text-transform: uppercase; }
+.tracking-wide { letter-spacing: 0.12em; }
+
+/* ── Animations ─────────────────────────────────────────────────────────────── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: var(--pf-yellow);
+}
+
+@keyframes pulse-yellow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 214, 0, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 214, 0, 0); }
+}
+
+.pulse-active {
+  animation: pulse-yellow 2s infinite;
+}

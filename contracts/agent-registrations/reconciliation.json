@@ -1,0 +1,27 @@
+{
+  "type": "Agent",
+  "name": "PayForge Reconciliation Agent",
+  "description": "Verifies payment settlements, records EAS-compatible attestations, updates reputation scores, and generates audit trails.",
+  "version": "1.0.0",
+  "created": "2026-06-14T15:23:13.565Z",
+  "endpoints": [
+    {
+      "type": "a2a",
+      "url": "https://payforge-orchestra.vercel.app/api/agents/reconciliation"
+    }
+  ],
+  "wallet": {
+    "address": "0x55931922BEDD5c1193a782f9c032dBFF977a1d99",
+    "chainId": 11142220,
+    "currency": "USDm"
+  },
+  "capabilities": [
+    "reconciliation"
+  ],
+  "supervisor": "0x0D8A79334D95f37A1643e9b7BD4974fC2AD73866",
+  "project": "PayForge Orchestra",
+  "hackathon": "Celo Onchain Agents Hackathon 2026",
+  "supportedTrust": [
+    "reputation"
+  ]
+}

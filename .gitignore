@@ -1,0 +1,12 @@
+# Deployment artifacts with private keys
+contracts/deployments/
+agents/contracts/deployments/
+# Environment files
+.env
+agents/.env
+contracts/.env
+frontend/.env.local
+# Dependencies
+node_modules/
+dist/
+.next/

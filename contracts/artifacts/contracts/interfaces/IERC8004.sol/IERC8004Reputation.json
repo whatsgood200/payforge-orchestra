@@ -1,0 +1,149 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IERC8004Reputation",
+  "sourceName": "contracts/interfaces/IERC8004.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "agentId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSummary",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "feedbackCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int128",
+          "name": "averageValue",
+          "type": "int128"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "agentId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int128",
+          "name": "value",
+          "type": "int128"
+        },
+        {
+          "internalType": "uint8",
+          "name": "valueDecimals",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "tag1",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "tag2",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "endpointURI",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "fileURI",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "fileHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "giveFeedback",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "agentId",
+          "type": "uint256"
+        }
+      ],
+      "name": "readAllFeedback",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "clientAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "int128",
+              "name": "value",
+              "type": "int128"
+            },
+            {
+              "internalType": "uint8",
+              "name": "valueDecimals",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "tag1",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "tag2",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "endpointURI",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "fileURI",
+              "type": "string"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "fileHash",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IERC8004Reputation.Feedback[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
