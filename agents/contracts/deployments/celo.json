@@ -1,0 +1,15 @@
+{
+  "network": "celo",
+  "chainId": 42220,
+  "contracts": {
+    "policyEngine": "0xAE3A2f6357cF7fB27Cc62089481cd371922bb873",
+    "paymentOrchestrator": "0xb81F7eca0DE77e1e1658277e3680f958BF1D2bC9",
+    "attestationLogger": "0x13b386073647E07E5f7122cee8c370577E3A796a",
+    "feeVault": "0x2a0D19E1fE0112E851647D58a18e65f86E63c601"
+  },
+  "externalContracts": {
+    "mentoBroker": "0x777A8255cA72412f0d706dc03C9D1987306B4CaD",
+    "USDm": "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+    "erc8004Identity": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
+  }
+}
