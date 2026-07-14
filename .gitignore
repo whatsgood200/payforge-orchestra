@@ -1,6 +1,5 @@
 # Deployment artifacts with private keys
 contracts/deployments/
-agents/contracts/deployments/
 # Environment files
 .env
 agents/.env
@@ -10,3 +9,6 @@ frontend/.env.local
 node_modules/
 dist/
 .next/
+**/deployments/celo.json
+**/deployments/celo-sepolia.json
+**/.env
