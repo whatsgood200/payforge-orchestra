@@ -95,19 +95,24 @@ export async function executionAgent(state: PaymentState): Promise<Partial<Payme
 
       // Step 2: Call Mento swapIn directly from business wallet
       // Output goes to business wallet first, then we transfer to recipient
-      txHash = await businessClient.writeContract({
-        address: addrs.mentoBroker,
-        abi: MENTO_BROKER_ABI,
-        functionName: "swapIn",
-        args: [
-          fxQuote.exchangeProvider as `0x${string}`,
-          fxQuote.exchangeId as `0x${string}`,
-          request.fromCurrency,
-          request.toCurrency,
-          amountIn,
-          1n, // minAmountOut = 1 to eliminate slippage failure
-        ],
-      });
+    // Attribution tag for Celo hackathon Track 1
+const ATTRIBUTION_TAG = "celo_3034d7ae2868";
+const tagHex = `0x${Buffer.from(ATTRIBUTION_TAG).toString("hex")}` as `0x${string}`;
+
+txHash = await businessClient.writeContract({
+  address: addrs.mentoBroker,
+  abi: MENTO_BROKER_ABI,
+  functionName: "swapIn",
+  args: [
+    fxQuote.exchangeProvider as `0x${string}`,
+    fxQuote.exchangeId as `0x${string}`,
+    request.fromCurrency,
+    request.toCurrency,
+    amountIn,
+    1n,
+  ],
+  dataSuffix: tagHex,
+});
 
       const swapReceipt = await publicClient.waitForTransactionReceipt({ hash: txHash, timeout: 90_000 });
 
