@@ -53,8 +53,8 @@ export const ERC20_ABI = parseAbi([
   "function allowance(address owner, address spender) view returns (uint256)",
   "function balanceOf(address account) view returns (uint256)",
   "function decimals() view returns (uint8)",
+  "function transfer(address to, uint256 amount) returns (bool)",  // ← ADD THIS
 ]);
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Client factory
 // ─────────────────────────────────────────────────────────────────────────────
